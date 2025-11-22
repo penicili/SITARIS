@@ -14,8 +14,8 @@ class ItemsController extends Controller
      */
     public function index()
     {
-        $items = Item::latest(5);
-        return new ItemResource($items);
+        $items = Item::all();
+        return ItemResource::collection($items);
     }
 
     /**
